@@ -14,11 +14,11 @@ class CreateSalesTable extends Migration
     public function up()
     {
         Schema::create('sales', function (Blueprint $table) {
-            $table->bigIncrements('idSale');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('idUserSale');
-            $table->foreign('idUserSale')->references('idUser')->on('users');
+            $table->foreign('idUserSale')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieSale');
-            $table->foreign('idMovieSale')->references('idMovie')->on('movies');
+            $table->foreign('idMovieSale')->references('id')->on('movies');
             $table->timestamp('dateSale', $precision = 0);
             $table->integer('quantitySale');
             $table->double('subtotalSale', 8, 2);

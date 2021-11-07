@@ -14,11 +14,11 @@ class CreateRentsTable extends Migration
     public function up()
     {
         Schema::create('rents', function (Blueprint $table) {
-            $table->bigIncrements('idRent');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('idUserRent');
-            $table->foreign('idUserRent')->references('idUser')->on('users');
+            $table->foreign('idUserRent')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieRent');
-            $table->foreign('idMovieRent')->references('idMovie')->on('movies');
+            $table->foreign('idMovieRent')->references('id')->on('movies');
             $table->timestamp('dateRent', $precision = 0);
             $table->date('returnDateRent');
             $table->integer('quantityRent');

@@ -15,10 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $response= User::getUsersWithRol();
-        if($response != null){
+        $response = User::getUsersWithRol();
+        if ($response != null) {
             return response()->json($response, 200);
-        } else{
+        } else {
             return response()->json($response, 204);
         }
     }
@@ -28,7 +28,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
         $user = new User();
         $user->firstNameUser = $request->firstNameUser;
@@ -43,20 +54,9 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -67,7 +67,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -78,23 +78,37 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::findOrFail($request->idUser);
+        $user->firstNameUser = $request->firstNameUser;
+        $user->lastNameUser = $request->lastNameUser;
+        $user->phoneUser = $request->phoneUser;
+        $user->loginNameUser = $request->loginNameUser;
+        $user->loginPasswordUser = password_hash($request->loginPasswordUser, PASSWORD_DEFAULT);
+        $user->idRolUser = $request->idRolUser;
+        $user->save();
+        return $user;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return int
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $user = User::destroy($request->idUser);
+        if($user==1){
+            return response()->json($user, 200);
+        } else{
+            return response()->json($user, 400);
+        }
     }
+
 }

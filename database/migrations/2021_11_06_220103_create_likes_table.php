@@ -14,11 +14,11 @@ class CreateLikesTable extends Migration
     public function up()
     {
         Schema::create('likes', function (Blueprint $table) {
-            $table->bigIncrements('idLike');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('idUserLike');
-            $table->foreign('idUserLike')->references('idUser')->on('users');
+            $table->foreign('idUserLike')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieLike');
-            $table->foreign('idMovieLike')->references('idMovie')->on('movies');
+            $table->foreign('idMovieLike')->references('id')->on('movies');
             $table->timestamp('dateLike', $precision = 0);
             $table->timestamps(); //createdAt and updateAt
         });
