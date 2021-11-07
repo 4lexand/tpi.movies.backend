@@ -5,26 +5,34 @@ namespace App;
 use App\Http\Models\Response;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Model
 {
-    protected $fillable = ["idUser", "firstNameUser", "lastNameUser"];
+    protected $fillable = ["idUser", "firstNameUser", "lastNameUser", "phoneUser", "loginNameUser", "loginPasswordUser", "idRolUser", "created_at", "updated_at"];
 
     public static function onLogin($username, $password)
     {
-        $user = DB::select("SELECT u.idUser, u.firstNameUser, u.lastNameUser, u.phoneUser, u.loginNameUser, r.titleRol
-                            as roleUser from users u INNER JOIN roles r ON u.idRolUser = r.idRol
-                            WHERE loginNameUser = '".$username."' AND loginPasswordUser = '".$password."'");
-        if (count($user) == 1) {
-            $response = new Response();
-            $response->setData($user[0]);
-            $response->setMessage("Exito al loguearse.");
-            return $response;
-        } else{
-            $response = new Response();
-            $response->setData(null);
-            $response->setMessage("Error al loguearse.");
-            return $response;
+        $user = DB::table('users')
+            ->join('roles', 'users.idRolUser', '=', 'roles.idRol')
+            ->select('users.*', 'roles.titleRol')
+            ->where('users.loginNameUser', '=', $username)
+            ->first();
+        if(password_verify($password, $user->loginPasswordUser)){
+
+            return $user;
+        } else {
+            return NULL;
         }
     }
+    public static function getUsersWithRol()
+    {
+        $users = DB::table('users')
+            ->join('roles', 'users.idRolUser', '=', 'roles.idRol')
+            ->select('users.*','roles.titleRol')
+            ->get();
+        return $users;
+    }
+
+
 }

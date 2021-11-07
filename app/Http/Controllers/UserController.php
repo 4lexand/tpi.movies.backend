@@ -4,12 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use App\Login;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use function MongoDB\BSON\toJSON;
 
-class LoginController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,18 +15,11 @@ class LoginController extends Controller
      */
     public function index()
     {
-
-
-    }
-
-    public function onLogin(Request $request)
-    {
-
-        $response = User::onLogin($request->username, $request->password);
+        $response= User::getUsersWithRol();
         if($response != null){
             return response()->json($response, 200);
         } else{
-            return response()->json($response, 401);
+            return response()->json($response, 204);
         }
     }
 
@@ -38,15 +28,24 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $user = new User();
+        $user->firstNameUser = $request->firstNameUser;
+        $user->lastNameUser = $request->lastNameUser;
+        $user->phoneUser = $request->phoneUser;
+        $user->loginNameUser = $request->loginNameUser;
+        $user->loginPasswordUser = password_hash($request->loginPasswordUser, PASSWORD_DEFAULT);
+        $user->idRolUser = $request->idRolUser;
+
+        $user->save();
+        return $user;
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -57,7 +56,7 @@ class LoginController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +67,7 @@ class LoginController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,8 +78,8 @@ class LoginController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +90,7 @@ class LoginController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

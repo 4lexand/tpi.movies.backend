@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 */
 
 
-Route::get('/login', 'LoginController@onLogin'); //mostrar cosa login
+Route::post('/login', 'LoginController@onLogin'); //login
+Route::get('/users', 'UserController@index'); //mostrar usuarios
+Route::post('/users', 'UserController@create'); //crear usuarios
