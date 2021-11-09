@@ -30,3 +30,7 @@ Route::get('/movies/{idUser}', 'MovieController@index'); //muestra peliculas
 Route::post('/movies', 'MovieController@store'); //crear pelicula
 Route::put('/movies/{idMovie}', 'MovieController@update'); //actualizar pelicula
 Route::delete('/movies/{idMovie}', 'MovieController@destroy'); //eliminar pelicula
+
+Route::get('/likes', 'LikeController@index'); //ver lista like
+Route::post('/likes', 'LikeController@store'); //crear like
+Route::delete('/likes/{idLike}', 'LikeController@destroy'); //eliminar like

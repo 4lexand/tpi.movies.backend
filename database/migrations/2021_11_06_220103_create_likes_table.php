@@ -19,7 +19,6 @@ class CreateLikesTable extends Migration
             $table->foreign('idUserLike')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieLike');
             $table->foreign('idMovieLike')->references('id')->on('movies');
-            $table->timestamp('dateLike', $precision = 0);
             $table->timestamps(); //createdAt and updateAt
         });
     }

@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Like.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Movie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_215946_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_215946_create_movies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220023_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220023_create_roles_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220033_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220033_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220042_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220042_create_sales_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Like.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Like.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220103_create_likes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220103_create_likes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -167,6 +159,8 @@
       <workItem from="1636304888035" duration="5433000" />
       <workItem from="1636312533719" duration="2473000" />
       <workItem from="1636322554514" duration="3321000" />
+      <workItem from="1636425081997" duration="80000" />
+      <workItem from="1636425556497" duration="1506000" />
     </task>
     <servers />
   </component>
@@ -209,10 +203,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="425" y="175" key="NewPhpClassDialog/0.0.1280.720@0.0.1280.720" timestamp="1636238988321" />
-    <state x="341" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1636234685849">
+    <state x="341" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1636425084097">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="341" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1636234685849" />
+    <state x="341" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1636425084097" />
     <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1636312950312">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
