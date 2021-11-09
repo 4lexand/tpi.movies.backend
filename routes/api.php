@@ -34,3 +34,4 @@ Route::delete('/movies/{idMovie}', 'MovieController@destroy'); //eliminar pelicu
 Route::get('/likes', 'LikeController@index'); //ver lista like
 Route::post('/likes', 'LikeController@store'); //crear like
 Route::delete('/likes/{idLike}', 'LikeController@destroy'); //eliminar like
+Route::delete('/likes/', 'LikeController@deleteByUserAndMovie'); //eliminar like

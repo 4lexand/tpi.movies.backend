@@ -34,4 +34,12 @@ class Like extends Model
             ->get();
         return $likes;
     }
+    public static function deleteLikeByUserAndMovie($user, $movie)
+    {
+        $likes = DB::table('likes')
+            ->where('idUserLike','=',$user)
+            ->where('idMovieLike',"=",$movie)
+            ->delete();
+        return $likes;
+    }
 }

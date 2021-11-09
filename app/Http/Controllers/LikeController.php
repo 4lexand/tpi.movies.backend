@@ -100,4 +100,14 @@ class LikeController extends Controller
             return response()->json($like,400);
         }
     }
+
+    public function deleteByUserAndMovie(Request $request)
+    {
+        $like = Like::deleteLikeByUserAndMovie($request->idUserLike, $request->idMovieLike);
+        if($like ==1){
+            return response()->json($like,200);
+        } else{
+            return response()->json($like,400);
+        }
+    }
 }
