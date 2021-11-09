@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Login;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\LoginRequest;
 use function MongoDB\BSON\toJSON;
 
 class LoginController extends Controller
@@ -22,14 +23,14 @@ class LoginController extends Controller
 
     }
 
-    public function onLogin(Request $request)
+    public function onLogin(LoginRequest $request)
     {
 
         $response = User::onLogin($request->username, $request->password);
         if($response != null){
             return response()->json($response, 200);
         } else{
-            return response()->json($response, 401);
+            return response()->json("Bad credentials.", 401);
         }
     }
 

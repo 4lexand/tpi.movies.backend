@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MovieRequest;
 use App\Like;
 use App\Movie;
 use App\User;
@@ -65,7 +66,7 @@ class MovieController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MovieRequest $request)
     {
         $movie = new Movie();
         $movie->titleMovie = $request->titleMovie;
@@ -108,7 +109,7 @@ class MovieController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(MovieRequest $request)
     {
         $movie = Movie::findOrFail($request->idMovie);
         $movie->titleMovie = $request->titleMovie;

@@ -18,12 +18,16 @@ class User extends Model
             ->select('users.*', 'roles.titleRol')
             ->where('users.loginNameUser', '=', $username)
             ->first();
-        if(password_verify($password, $user->loginPasswordUser)){
-
-            return $user;
-        } else {
+        if($user!=null){
+            if(password_verify($password, $user->loginPasswordUser)){
+                return $user;
+            } else {
+                return NULL;
+            }
+        } else{
             return NULL;
         }
+
     }
     public static function getUsersWithRol()
     {
