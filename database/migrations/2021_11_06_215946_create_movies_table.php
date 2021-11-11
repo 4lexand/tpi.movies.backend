@@ -18,6 +18,7 @@ class CreateMoviesTable extends Migration
             $table->string('titleMovie');
             $table->text('descriptionMovie');
             $table->string('urlImageMovie');
+            $table->string('urlTrailerMovie');
             $table->integer('stockMovie');
             $table->double('rentalPriceMovie',8,2);
             $table->double('purchasePriceMovie',8,2);

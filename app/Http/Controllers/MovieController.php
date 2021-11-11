@@ -24,9 +24,9 @@ class MovieController extends Controller
 
                 $likes = Like::getCountSpecificUserAndMovie($request->idUser, $item->id);
                 if($likes == 0 ){
-                    $item->likesUserMovie = false;
+                    $item->likeUserMovie = false;
                 } else{
-                    $item->likesUserMovie = true;
+                    $item->likeUserMovie = true;
                 }
 
             }
@@ -72,6 +72,7 @@ class MovieController extends Controller
         $movie->titleMovie = $request->titleMovie;
         $movie->descriptionMovie = $request->descriptionMovie;
         $movie->urlImageMovie = $request->urlImageMovie;
+        $movie->urlTrailerMovie = $request->urlTrailerMovie;
         $movie->stockMovie = $request->stockMovie;
         $movie->rentalPriceMovie =$request->rentalPriceMovie;
         $movie->purchasePriceMovie = $request->purchasePriceMovie;
@@ -115,6 +116,7 @@ class MovieController extends Controller
         $movie->titleMovie = $request->titleMovie;
         $movie->descriptionMovie = $request->descriptionMovie;
         $movie->urlImageMovie = $request->urlImageMovie;
+        $movie->urlTrailerMovie = $request->urlTrailerMovie;
         $movie->stockMovie = $request->stockMovie;
         $movie->rentalPriceMovie =$request->rentalPriceMovie;
         $movie->purchasePriceMovie = $request->purchasePriceMovie;

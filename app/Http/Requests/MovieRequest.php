@@ -14,6 +14,7 @@ class MovieRequest extends FormRequest
             'titleMovie' => 'required|string',
             'descriptionMovie' => 'required|string',
             'urlImageMovie' => 'required|url',
+            'urlTrailerMovie' => 'required|url',
             'stockMovie' => 'required|integer',
             'rentalPriceMovie' => 'required|numeric',
             'purchasePriceMovie' => 'required|numeric',
