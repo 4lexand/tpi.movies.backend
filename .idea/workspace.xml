@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/seeds/RolesSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RentalController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Rental.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/MovieRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/MovieRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Movie.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_215946_create_movies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_215946_create_movies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,9 @@
       <workItem from="1636487164342" duration="2367000" />
       <workItem from="1636491025510" duration="8000" />
       <workItem from="1636491973300" duration="3760000" />
-      <workItem from="1636595772566" duration="807000" />
+      <workItem from="1636595772566" duration="1140000" />
+      <workItem from="1636660614655" duration="490000" />
+      <workItem from="1636835850469" duration="2349000" />
     </task>
     <servers />
   </component>
@@ -181,14 +183,18 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="439" y="77" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1636239009716" />
-    <state x="321" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1636234703441">
+    <state x="321" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1636835869742">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="321" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.720@0.0.1280.720" timestamp="1636234703441" />
+    <state x="321" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.720@0.0.1280.720" timestamp="1636835869742" />
     <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636489046600">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.720@0.0.1280.720" timestamp="1636489046600" />
+    <state x="326" y="16" width="643" height="689" key="#phpunit.xml" timestamp="1636837379780">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="326" y="16" width="643" height="689" key="#phpunit.xml/0.0.1280.720@0.0.1280.720" timestamp="1636837379780" />
     <state x="421" y="116" key="FileChooserDialogImpl" timestamp="1636491031548">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
@@ -217,9 +223,9 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="341" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1636425084097" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1636312950312">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1636837207491">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1636312950312" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1636837207491" />
   </component>
 </project>

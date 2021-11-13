@@ -31,7 +31,14 @@ class MovieController extends Controller
 
             }
             return $movies;
-        } else {
+        } if(isset($request->idMovie)){
+           $movie = Movie::getSpecificMovie($request->idMovie);
+           if($movie!= null){
+               return response()->json($movie, 200);
+           } else{
+               return response()->json($movie, 400);
+           }
+    } else {
             $movies = $this->getMoviesAndCountLikes();
             return $movies;
         }

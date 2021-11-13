@@ -21,8 +21,8 @@ class CreateRentsTable extends Migration
             $table->foreign('idMovieRent')->references('id')->on('movies');
             $table->timestamp('dateRent', $precision = 0);
             $table->date('returnDateRent');
-            $table->integer('quantityRent');
             $table->double('subtotalRent', 8, 2);
+            $table->double('arrearRent', 8, 2);
             $table->double('totalRent', 8, 2);
             $table->timestamps(); //createdAt and updateAt
         });
