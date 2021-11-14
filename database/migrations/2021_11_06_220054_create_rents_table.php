@@ -19,11 +19,13 @@ class CreateRentsTable extends Migration
             $table->foreign('idUserRent')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieRent');
             $table->foreign('idMovieRent')->references('id')->on('movies');
-            $table->timestamp('dateRent', $precision = 0);
+            $table->date('dateRent');
             $table->date('returnDateRent');
             $table->double('subtotalRent', 8, 2);
-            $table->double('arrearRent', 8, 2);
-            $table->double('totalRent', 8, 2);
+            $table->double('arrearRent', 8, 2)->nullable(true);
+            $table->date('returnValidDateRent')->nullable(true);
+            $table->double('totalRent', 8, 2)->nullable(true);
+            $table->string('statusRent');
             $table->timestamps(); //createdAt and updateAt
         });
     }

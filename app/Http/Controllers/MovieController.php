@@ -45,6 +45,10 @@ class MovieController extends Controller
 
     }
 
+    public function getAll(){
+
+    }
+
     private function getMoviesAndCountLikes()
     {
         $movies = Movie::all();

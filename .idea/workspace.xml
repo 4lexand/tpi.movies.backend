@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RentalController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Rental.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/RentRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Rent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Movie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rental.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220054_create_rents_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -23,6 +24,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -138,6 +142,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="C:/webhost/TPI-FINAL" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -168,7 +173,8 @@
       <workItem from="1636491973300" duration="3760000" />
       <workItem from="1636595772566" duration="1140000" />
       <workItem from="1636660614655" duration="490000" />
-      <workItem from="1636835850469" duration="2349000" />
+      <workItem from="1636835850469" duration="2391000" />
+      <workItem from="1636854144604" duration="7136000" />
     </task>
     <servers />
   </component>
@@ -187,10 +193,14 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="321" y="97" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1280.720@0.0.1280.720" timestamp="1636835869742" />
-    <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636489046600">
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1636855758098">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.720@0.0.1280.720" timestamp="1636489046600" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.720@0.0.1280.720" timestamp="1636855758098" />
+    <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1636858069833">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="371" y="116" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.720@0.0.1280.720" timestamp="1636858069833" />
     <state x="326" y="16" width="643" height="689" key="#phpunit.xml" timestamp="1636837379780">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

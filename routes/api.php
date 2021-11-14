@@ -25,6 +25,7 @@ Route::post('/users', 'UserController@store'); //crear usuarios
 Route::put('/users/{idUser}', 'UserController@update'); //actualiza usuarios
 Route::delete('/users/{idUser}', 'UserController@destroy'); //elimina usuarios
 
+Route::get('/movies-all', 'MovieController@getAll'); //muestra peliculas
 Route::get('/movies', 'MovieController@index'); //muestra peliculas
 Route::get('/movies/{idMovie}', 'MovieController@index'); //muestra peliculas por id de pelicula
 Route::get('/movies/{idUser}', 'MovieController@index'); //muestra peliculas
@@ -36,3 +37,9 @@ Route::get('/likes', 'LikeController@index'); //ver lista like
 Route::post('/likes', 'LikeController@store'); //crear like
 Route::delete('/likes/{idLike}', 'LikeController@destroy'); //eliminar like
 Route::delete('/likes/', 'LikeController@deleteByUserAndMovie'); //eliminar like
+
+
+Route::get('/rents', 'RentController@index'); //ver lista rentas
+Route::get('/rents/arrear/{idRent}', 'RentController@getArrearById'); //ver mora p[or id de renta
+Route::post('/rents', 'RentController@store'); //crear renta
+Route::put('/rents/{idRent}', 'RentController@returnRent'); //cerrar renta teniendo la devolucion de la pelicula
