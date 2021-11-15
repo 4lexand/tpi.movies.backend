@@ -21,4 +21,11 @@ class Movie extends Model
             return NULL;
         }
     }
+
+    public static function getAvailableMovies(){
+        $movies = DB::table('movies')
+            ->where('availabilityMovie','=', 1)
+            ->get();
+        return $movies;
+    }
 }

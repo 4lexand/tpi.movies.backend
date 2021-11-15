@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Models/StatusRent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/RentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/RentRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Movie.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Movie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +173,8 @@
       <workItem from="1636835850469" duration="2391000" />
       <workItem from="1636854144604" duration="7246000" />
       <workItem from="1636919227604" duration="44000" />
-      <workItem from="1637009012150" duration="705000" />
+      <workItem from="1637009012150" duration="758000" />
+      <workItem from="1637010391927" duration="907000" />
     </task>
     <servers />
   </component>

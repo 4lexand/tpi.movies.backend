@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Models\StatusRent;
 use App\Http\Requests\RentRequest;
+use App\Movie;
 use App\Rent;
 use Illuminate\Http\Request;
 
@@ -68,6 +69,10 @@ class RentController extends Controller
      */
     public function store(RentRequest $request)
     {
+        $movie = Movie::find($request->idMovieRent);
+        if ($movie==null){
+            return response()->json($movie,400);
+        }
         $rent = new Rent();
         $rent->idUserRent = $request->idUserRent;
         $rent->idMovieRent = $request->idMovieRent;
@@ -76,17 +81,27 @@ class RentController extends Controller
         $rent->subtotalRent = $this->calcSubTotalRent($request->subtotalRent);
         $rent->statusRent = StatusRent::$inProgress;
         $rent->save();
-        return $rent;
+
+        $movie->stockMovie -=1;
+        $movie->save();
+        return response()->json($rent,200);
     }
 
     public function returnRent(Request $request){
+
         $rent = Rent::findOrFail($request->idRent);
+        $movie = Movie::find($rent->idMovieRent);
+        if ($movie==null){
+            return response()->json($movie,400);
+        }
         $rent->arrearRent = $this->calcArrearRent($rent->returnDateRent, $rent->subtotalRent);
         $rent->totalRent = round($rent->subtotalRent + $rent->arrearRent,2);
         $rent->returnValidDateRent = date('Y-m-d');
         $rent->statusRent = StatusRent::$done;
         $rent->save();
-        return $rent;
+        $movie->stockMovie +=1;
+        $movie->save();
+        return response()->json($rent,200);
     }
 
     public function cancelRent(Request $request){

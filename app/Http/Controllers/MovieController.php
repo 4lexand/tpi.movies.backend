@@ -46,12 +46,13 @@ class MovieController extends Controller
     }
 
     public function getAll(){
-
+        $movies = Movie::all();
+        return $movies;
     }
 
     private function getMoviesAndCountLikes()
     {
-        $movies = Movie::all();
+        $movies = Movie::getAvailableMovies();
         foreach ($movies as $item) {
 
             $likes = Like::getCountSpecificMovie($item->id);

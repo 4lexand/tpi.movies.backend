@@ -26,7 +26,7 @@ Route::put('/users/{idUser}', 'UserController@update'); //actualiza usuarios
 Route::delete('/users/{idUser}', 'UserController@destroy'); //elimina usuarios
 
 Route::get('/movies-all', 'MovieController@getAll'); //muestra peliculas
-Route::get('/movies', 'MovieController@index'); //muestra peliculas
+Route::get('/movies', 'MovieController@index'); //muestra peliculas disponibles
 Route::get('/movies/{idMovie}', 'MovieController@index'); //muestra peliculas por id de pelicula
 Route::get('/movies/{idUser}', 'MovieController@index'); //muestra peliculas
 Route::post('/movies', 'MovieController@store'); //crear pelicula
