@@ -39,7 +39,9 @@ Route::delete('/likes/{idLike}', 'LikeController@destroy'); //eliminar like
 Route::delete('/likes/', 'LikeController@deleteByUserAndMovie'); //eliminar like
 
 
-Route::get('/rents', 'RentController@index'); //ver lista rentas
+Route::get('/rents-all', 'RentController@getAll'); //ver lista rentas
+Route::get('/rents', 'RentController@index'); //ver lista rentas activas
 Route::get('/rents/arrear/{idRent}', 'RentController@getArrearById'); //ver mora p[or id de renta
 Route::post('/rents', 'RentController@store'); //crear renta
-Route::put('/rents/{idRent}', 'RentController@returnRent'); //cerrar renta teniendo la devolucion de la pelicula
+Route::put('/rents/done/{idRent}', 'RentController@returnRent'); //cerrar renta teniendo la devolucion de la pelicula
+Route::put('/rents/cancel/{idRent}', 'RentController@cancelRent'); //cancela renta por algun error

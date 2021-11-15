@@ -15,7 +15,6 @@ class RentRequest extends FormRequest
             'idMovieRent' => 'required|numeric',
             'dateRent' => 'required|date',
             'subtotalRent' => 'required|numeric',
-            'statusRent'=>'required|string'
         ];
     }
 

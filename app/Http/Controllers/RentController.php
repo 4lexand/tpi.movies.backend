@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Models\StatusRent;
 use App\Http\Requests\RentRequest;
 use App\Rent;
 use Illuminate\Http\Request;
@@ -39,9 +40,14 @@ class RentController extends Controller
      */
     public function index()
     {
+        $rent = Rent::getAllActive();
+        return response()->json($rent,200);
+
+    }
+
+    public function getAll(){
         $rent = Rent::getRentWithNamesAndMovies();
         return response()->json($rent, 200);
-
     }
 
     /**
@@ -68,7 +74,7 @@ class RentController extends Controller
         $rent->dateRent = $request->dateRent;
         $rent->returnDateRent = $this->calcReturnDateRent($request->dateRent);
         $rent->subtotalRent = $this->calcSubTotalRent($request->subtotalRent);
-        $rent->statusRent = $request->statusRent;
+        $rent->statusRent = StatusRent::$inProgress;
         $rent->save();
         return $rent;
     }
@@ -78,7 +84,14 @@ class RentController extends Controller
         $rent->arrearRent = $this->calcArrearRent($rent->returnDateRent, $rent->subtotalRent);
         $rent->totalRent = round($rent->subtotalRent + $rent->arrearRent,2);
         $rent->returnValidDateRent = date('Y-m-d');
-        $rent->statusRent = "done";
+        $rent->statusRent = StatusRent::$done;
+        $rent->save();
+        return $rent;
+    }
+
+    public function cancelRent(Request $request){
+        $rent = Rent::findOrFail($request->idRent);
+        $rent->statusRent = StatusRent::$cancelled;
         $rent->save();
         return $rent;
     }

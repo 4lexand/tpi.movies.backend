@@ -8,16 +8,28 @@ use function PHPUnit\Framework\isEmpty;
 
 class Rent extends Model
 {
-    protected $fillable = ["idUserRent", "idMovieRent","dateRent" , "returnDateRent", "subtotalRent", "returnValidDateRent", "totalRent"];
+    protected $fillable = ["idUserRent", "idMovieRent", "dateRent", "returnDateRent", "subtotalRent", "returnValidDateRent", "totalRent"];
 
-    public static function getRentWithNamesAndMovies(){
+    public static function getRentWithNamesAndMovies()
+    {
         $rent = DB::table('rents')
             ->join('users', 'rents.idUserRent', '=', 'users.id')
             ->join('movies', 'rents.idMovieRent', '=', 'movies.id')
-            ->select('rents.*','users.firstNameUser','users.lastNameUser',"movies.titleMovie")
+            ->select('rents.*', 'users.firstNameUser', 'users.lastNameUser', "movies.titleMovie")
             ->get();
-            return $rent;
+        return $rent;
 
 
+    }
+
+    public static function getAllActive()
+    {
+        $rent = DB::table('rents')
+            ->join('users', 'rents.idUserRent', '=', 'users.id')
+            ->join('movies', 'rents.idMovieRent', '=', 'movies.id')
+            ->select('rents.*', 'users.firstNameUser', 'users.lastNameUser', "movies.titleMovie")
+            ->where('statusRent','=','in-progress')
+            ->get();
+        return $rent;
     }
 }
