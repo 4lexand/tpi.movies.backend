@@ -45,3 +45,10 @@ Route::get('/rents/arrear/{idRent}', 'RentController@getArrearById'); //ver mora
 Route::post('/rents', 'RentController@store'); //crear renta
 Route::put('/rents/done/{idRent}', 'RentController@returnRent'); //cerrar renta teniendo la devolucion de la pelicula
 Route::put('/rents/cancel/{idRent}', 'RentController@cancelRent'); //cancela renta por algun error
+
+
+Route::get('/sales-all', 'SaleController@getAll'); //ver ventas
+Route::get('/sales', 'SaleController@index'); //ver lista ventas activas
+Route::post('/sales', 'SaleController@store'); //crear venta
+Route::put('/sales/cancel/{idSale}', 'SaleController@cancelSale'); //cambia el estado de la venta a cancelado
+Route::put('/sales/done/{idSale}', 'SaleController@doneSale'); //cambia el estado de la venta a hecho

@@ -19,10 +19,9 @@ class CreateSalesTable extends Migration
             $table->foreign('idUserSale')->references('id')->on('users');
             $table->unsignedBigInteger('idMovieSale');
             $table->foreign('idMovieSale')->references('id')->on('movies');
-            $table->timestamp('dateSale', $precision = 0);
-            $table->integer('quantitySale');
-            $table->double('subtotalSale', 8, 2);
+            $table->date('dateSale');
             $table->double('totalSale', 8, 2);
+            $table->string('statusSale');
             $table->timestamps(); //createdAt and updateAt
         });
     }
