@@ -96,6 +96,20 @@ class UserController extends Controller
         return $user;
     }
 
+    public function changePassword(Request $request)
+    {
+        $user = User::where('loginNameUser',"=",$request->loginNameUser)->firstOrFail();
+        //$user = User::findSpecificUserByLoginNameUser($request->loginNameUser);
+        if ($user == null) return response()->json($user, 400);
+        if (password_verify($request->oldPassword, $user->loginPasswordUser)) {
+            $user->loginPasswordUser = password_hash($request->newPassword, PASSWORD_DEFAULT);
+            $user->save();
+            return response()->json($user, 200);
+        } else {
+            return response()->json("Contraseña anterior incorrecta", 400);
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -105,9 +119,9 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $user = User::destroy($request->idUser);
-        if($user==1){
+        if ($user == 1) {
             return response()->json($user, 200);
-        } else{
+        } else {
             return response()->json($user, 400);
         }
     }

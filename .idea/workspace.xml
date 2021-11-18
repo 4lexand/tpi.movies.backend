@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,7 +176,8 @@
       <workItem from="1637010391927" duration="979000" />
       <workItem from="1637084585095" duration="87000" />
       <workItem from="1637120774352" duration="2129000" />
-      <workItem from="1637206675800" duration="3669000" />
+      <workItem from="1637206675800" duration="3847000" />
+      <workItem from="1637250432005" duration="795000" />
     </task>
     <servers />
   </component>
@@ -234,9 +236,9 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="341" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1636425084097" />
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1636837207491">
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup" timestamp="1637251064624">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1636837207491" />
+    <state x="303" y="41" width="672" height="678" key="search.everywhere.popup/0.0.1280.720@0.0.1280.720" timestamp="1637251064624" />
   </component>
 </project>

@@ -23,6 +23,7 @@ Route::post('/login', 'LoginController@onLogin'); //login
 Route::get('/users', 'UserController@index'); //mostrar usuarios
 Route::post('/users', 'UserController@store'); //crear usuarios
 Route::put('/users/{idUser}', 'UserController@update'); //actualiza usuarios
+Route::put('/users-change-password', 'UserController@changePassword'); //cambiar la contrasena de un usuario
 Route::delete('/users/{idUser}', 'UserController@destroy'); //elimina usuarios
 
 Route::get('/movies-all', 'MovieController@getAll'); //muestra peliculas

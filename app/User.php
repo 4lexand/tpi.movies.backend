@@ -18,31 +18,40 @@ class User extends Model
             ->select('users.*', 'roles.titleRol')
             ->where('users.loginNameUser', '=', $username)
             ->first();
-        if($user!=null){
-            if(password_verify($password, $user->loginPasswordUser)){
+        if ($user != null) {
+            if (password_verify($password, $user->loginPasswordUser)) {
                 return $user;
             } else {
                 return NULL;
             }
-        } else{
+        } else {
             return NULL;
         }
 
     }
+
+    public static function findSpecificUserByLoginNameUser($loginNameUser)
+    {
+        $user = DB::table('users')
+            ->where('loginNameUser', "=", $loginNameUser)
+            ->first();
+        return $user;
+    }
+
     public static function getUsersWithRol()
     {
         $users = DB::table('users')
             ->join('roles', 'users.idRolUser', '=', 'roles.id')
-            ->select('users.*','roles.titleRol')
+            ->select('users.*', 'roles.titleRol')
             ->get();
         return $users;
     }
 
-    public static function deleteUser($idUser){
+    public static function deleteUser($idUser)
+    {
         $user = DB::table('users')->where('idUser', '=', $idUser)->delete();
         return $user;
     }
-
 
 
 }
