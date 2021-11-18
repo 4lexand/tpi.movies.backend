@@ -18,35 +18,37 @@ class MovieController extends Controller
      */
     public function index(Request $request)
     {
-        if (isset($request->idUser)) {
-            $movies = $this->getMoviesAndCountLikes();
-            foreach ($movies as $item) {
-
-                $likes = Like::getCountSpecificUserAndMovie($request->idUser, $item->id);
-                if($likes == 0 ){
-                    $item->likeUserMovie = false;
-                } else{
-                    $item->likeUserMovie = true;
-                }
-
-            }
-            return $movies;
-        } if(isset($request->idMovie)){
-           $movie = Movie::getSpecificMovie($request->idMovie);
-           if($movie!= null){
-               return response()->json($movie, 200);
-           } else{
-               return response()->json($movie, 400);
-           }
-    } else {
             $movies = $this->getMoviesAndCountLikes();
             return $movies;
+
+    }
+
+    public function getSpecificMovie(Request $request){
+        $movie = Movie::getSpecificMovie($request->idMovie);
+        if($movie!= null){
+            return response()->json($movie, 200);
+        } else{
+            return response()->json($movie, 400);
         }
-
     }
 
     public function getAll(){
         $movies = Movie::all();
+        return $movies;
+    }
+
+    public function getAllByUser(Request $request){
+        $movies = $this->getMoviesAndCountLikes();
+        foreach ($movies as $item) {
+
+            $likes = Like::getCountSpecificUserAndMovie($request->idUser, $item->id);
+            if($likes == 0 ){
+                $item->likeUserMovie = false;
+            } else{
+                $item->likeUserMovie = true;
+            }
+
+        }
         return $movies;
     }
 

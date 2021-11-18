@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1971a14b-048f-4844-aa1e-86f0b95fa72c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Models/StatusSale.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/SaleRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Sale.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_11_06_220042_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_11_06_220042_create_sales_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MovieController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,7 +174,8 @@
       <workItem from="1637009012150" duration="758000" />
       <workItem from="1637010391927" duration="979000" />
       <workItem from="1637084585095" duration="87000" />
-      <workItem from="1637120774352" duration="2063000" />
+      <workItem from="1637120774352" duration="2129000" />
+      <workItem from="1637206675800" duration="3669000" />
     </task>
     <servers />
   </component>
