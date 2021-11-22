@@ -8,6 +8,12 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LoginRequest extends FormRequest
 {
+    /*
+     *
+     *  REQUEST CREADO CON LAS REGLAS PARA LA VALIDACION DE DATOS A LA HORA DE RECIBIR UNA REQUEST
+     *
+     *
+     * */
     public function rules()
     {
         return [
@@ -16,6 +22,7 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    //FUNCION DE RETORNO SI HAY FALLOS DE VALIDACION
     public function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([

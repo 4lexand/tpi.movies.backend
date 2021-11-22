@@ -3,7 +3,10 @@
 
 namespace App\Http\Models;
 
-
+/*
+ *  CLASE DE LOS VALORES QUE PUEDE TENER EL STATUS RENT
+ *
+ * */
 class StatusRent
 {
     public static $inProgress = "in-progress";

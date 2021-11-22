@@ -2,7 +2,10 @@
 
 
 namespace App\Http\Models;
-
+/*
+ * MODELO DE RESSPUESTA
+ *
+ * */
 
 class Response
 {

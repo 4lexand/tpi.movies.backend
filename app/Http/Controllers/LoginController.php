@@ -23,13 +23,16 @@ class LoginController extends Controller
 
     }
 
+    //METODO DE LOGUEO DONDE RECIBE EL USERNAME Y PASSWORD
     public function onLogin(LoginRequest $request)
     {
-
+        //EJECUTA EL METODO ONLOGIN DEL MODELO DE USUARIOS
         $response = User::onLogin($request->username, $request->password);
-        if($response != null){
+        if ($response != null) {
+            //RETORNA LA RESPUESTA CON SU CORRESPONDIENTE STATUS
             return response()->json($response, 200);
-        } else{
+        } else {
+            //RETORNA LA RESPUESTA CON SU CORRESPONDIENTE STATUS
             return response()->json("Bad credentials.", 401);
         }
     }
